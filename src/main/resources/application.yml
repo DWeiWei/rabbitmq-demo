@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: rabbitmq-demo
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  #配置rabbitMq 服务器
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    # 开启发送确认
+    publisher-confirm-type: SIMPLE
+     # 开启发送失败退回
+    publisher-returns: true
+    virtual-host: '/'
+    listener:
+      simple:
+        acknowledge-mode: manual #开启手动Ack
